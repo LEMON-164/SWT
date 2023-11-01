@@ -19,10 +19,10 @@ import driver.driverFactory;
 public class TC05 {
     @Test
     public void tc05() {
-        String firstname = "Lemoneeee";
+        String firstname = "LEM";
         String middlename = "...";
-        String lastname = "VU";
-        String email_address = "lemon@gmail.com";
+        String lastname = "...";
+        String email_address = "minhlev1642003@gmail.com";
         String password = "Lemon@1604";
         String confirmation = "Lemon@1604";
 
@@ -35,7 +35,7 @@ public class TC05 {
             // Delay Web for Performance
 
             // 2. Click on my account link
-            registerPage.myAccountLink();
+            registerPage.clickMyAccountLink();
 
             // switching to new window
             for (String handle : driver.getWindowHandles()) {
@@ -44,7 +44,7 @@ public class TC05 {
 
             // 3. Click Create an Account link and fill New User information excluding the
             // registered Email ID.
-            registerPage.createAccountLink();
+            registerPage.clickCreateAccountLink();
 
             // switching to new window
             for (String handle : driver.getWindowHandles()) {
@@ -54,12 +54,12 @@ public class TC05 {
             registerPage.enterFirstName(firstname);
             registerPage.enterMiddleName(middlename);
             registerPage.enterLastName(lastname);
-            registerPage.enterEmailAddress(email_address);
+            registerPage.enterEmail(email_address);
             registerPage.enterPassword(password);
-            registerPage.enterPasswordConfirmation(confirmation);
+            registerPage.enterConfirmPassword(confirmation);
 
             // 4. Click Register
-            registerPage.registerButton();
+            registerPage.clickRegister();
 
             // switching to new window
             for (String handle : driver.getWindowHandles()) {
@@ -92,7 +92,7 @@ public class TC05 {
             // 9. In next page enter Email and a message and click SHARE WISHLIST
             WebElement typeEmail = driver.findElement(By.id("email_address"));
             typeEmail.clear();
-            typeEmail.sendKeys("tinhtse173630@fpt.edu.vn");
+            typeEmail.sendKeys("minhlev1642003@gmail.com");
 
             WebElement typeMess = driver.findElement(By.id("message"));
             typeMess.clear();

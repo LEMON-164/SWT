@@ -5,33 +5,32 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class LoginPage {
+
     WebDriver driver;
-
     By myAccountLink = By.linkText("MY ACCOUNT");
-
-    By enterEmailAddress = By.id("email");
-
-    By enterPassword = By.id("pass");
-    By loginButton= By.xpath("//button[@id='send2']");
+    By emailInputLocator = By.id("email");
+    By passwordInputLocator = By.id("pass");
+    By loginButton = By.id("send2");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
-
-    public void myAccountLink(){
+    public void clickMyAccountLink() {
         driver.findElement(myAccountLink).click();
     }
-    public void enterEmailAddress(String emailAddress){
-        WebElement emailAddressElement = driver.findElement(enterEmailAddress);
-        emailAddressElement.clear(); // clear the QTY before
-        emailAddressElement.sendKeys(emailAddress);
+    public void enterEmail(String email) {
+        WebElement emailElement = driver.findElement(emailInputLocator);
+        emailElement.clear();
+        emailElement.sendKeys(email);
     }
-    public void enterPassword(String password){
-        WebElement enterPasswordElement = driver.findElement(enterPassword);
-        enterPasswordElement.clear(); // clear the QTY before
-        enterPasswordElement.sendKeys(password);
+
+    public void enterPassword(String password) {
+        WebElement passwordElement = driver.findElement(passwordInputLocator);
+        passwordElement.clear();
+        passwordElement.sendKeys(password);
     }
-    public void loginButton(){
+    public void clickLogin() {
         driver.findElement(loginButton).click();
     }
+
 }

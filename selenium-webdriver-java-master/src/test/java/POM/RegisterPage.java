@@ -7,60 +7,67 @@ import org.openqa.selenium.WebElement;
 public class RegisterPage {
     WebDriver driver;
 
-    //Define your locators at the top of the class
     By myAccountLink = By.linkText("MY ACCOUNT");
     By createAccountLink = By.linkText("CREATE AN ACCOUNT");
-    By enterFirstName = By.id("firstname");
-    By enterMiddleName = By.id("middlename");
-    By enterLastName = By.id("lastname");
-    By enterEmailAddress = By.id("email_address");
-    By enterPassword = By.id("password");
-    By enterPasswordConfirmation = By.id("confirmation");
-    By registerButton= By.xpath("//button[@class='button']");
+    By firstNameInputLocator = By.id("firstname");
+    By middleNameInputLocator = By.id("middlename");
+    By lastNameInputLocator = By.id("lastname");
+    By emailInputLocator = By.id("email_address");
+    By passwordInputLocator = By.id("password");
+    By confirmPasswordInputLocator = By.id("confirmation");
+    By registerButton = By.cssSelector("button[title='Register']");
+
+    public Object clickRegister;
 
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    // Create methods for each action
-    public void myAccountLink(){
+    public void clickMyAccountLink() {
         driver.findElement(myAccountLink).click();
     }
-    public void createAccountLink(){
+
+    public void clickCreateAccountLink() {
         driver.findElement(createAccountLink).click();
     }
-    public void enterFirstName(String firstName){
-        WebElement firstNameElement = driver.findElement(enterFirstName);
-        firstNameElement.clear(); // clear the QTY before
+
+    public void enterFirstName(String firstName) {
+        WebElement firstNameElement = driver.findElement(firstNameInputLocator);
+        firstNameElement.clear();
         firstNameElement.sendKeys(firstName);
     }
-    public void enterMiddleName(String middleName){
-        WebElement firstNameElement = driver.findElement(enterMiddleName);
-        firstNameElement.clear(); // clear the QTY before
-        firstNameElement.sendKeys(middleName);
-    }
-    public void enterLastName(String lastName){
-        WebElement firstNameElement = driver.findElement(enterLastName);
-        firstNameElement.clear(); // clear the QTY before
-        firstNameElement.sendKeys(lastName);
-    }
-    public void enterEmailAddress(String emailAddress){
-        WebElement firstNameElement = driver.findElement(enterEmailAddress);
-        firstNameElement.clear(); // clear the QTY before
-        firstNameElement.sendKeys(emailAddress);
-    }
-    public void enterPassword(String password){
-        WebElement firstNameElement = driver.findElement(enterPassword);
-        firstNameElement.clear(); // clear the QTY before
-        firstNameElement.sendKeys(password);
-    }
-    public void enterPasswordConfirmation(String confirmation){
-        WebElement firstNameElement = driver.findElement(enterPasswordConfirmation);
-        firstNameElement.clear(); // clear the QTY before
-        firstNameElement.sendKeys(confirmation);
-    }
-    public void registerButton(){
-        driver.findElement(registerButton).click();
+
+    public void enterMiddleName(String middleName) {
+        WebElement middleNameElement = driver.findElement(middleNameInputLocator);
+        middleNameElement.clear();
+        middleNameElement.sendKeys(middleName);
     }
 
+    public void enterLastName(String lastName) {
+        WebElement lastNameElement = driver.findElement(lastNameInputLocator);
+        lastNameElement.clear();
+        lastNameElement.sendKeys(lastName);
+    }
+
+    public void enterEmail(String email) {
+        WebElement emailElement = driver.findElement(emailInputLocator);
+        emailElement.clear();
+        emailElement.sendKeys(email);
+    }
+
+    public void enterPassword(String password) {
+        WebElement passwordElement = driver.findElement(passwordInputLocator);
+        passwordElement.clear();
+        passwordElement.sendKeys(password);
+    }
+
+    public void enterConfirmPassword(String confirmPassword) {
+        WebElement confirmPasswordElement = driver.findElement(confirmPasswordInputLocator);
+        confirmPasswordElement.clear();
+        confirmPasswordElement.sendKeys(confirmPassword);
+    }
+
+    public void clickRegister() {
+        driver.findElement(registerButton).click();
+    }
 }
