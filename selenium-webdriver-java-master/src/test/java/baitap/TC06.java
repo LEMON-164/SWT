@@ -15,7 +15,6 @@ import POM.CheckOutPage;
 import POM.LoginPage;
 import driver.driverFactory;
 
-@org.testng.annotations.Test
 public class TC06 {
     @Test
     public static void testTC06() {
@@ -27,6 +26,7 @@ public class TC06 {
         String lastname = "...";
         String Company = "FPT";
         String Address = "dau do";
+        String Address1 = "dau day";
         String City = "new mexico";
         String State = "nevada";
         String Zip = "10000";
@@ -41,7 +41,6 @@ public class TC06 {
             // Go to http://live.techpanda.org/
             driver.get("http://live.techpanda.org/");
 
-            // debug purpose only
             Thread.sleep(2000);
 
             // Click on my account link
@@ -53,18 +52,15 @@ public class TC06 {
                 driver.switchTo().window(handle);
             }
 
-            // debug purpose only
             Thread.sleep(2000);
 
             // Login in application using previously created credential
             loginPage.enterEmail(emailAddress);
 
-            // debug purpose only
             Thread.sleep(1000);
 
             loginPage.enterPassword(password);
 
-            // debug purpose only
             Thread.sleep(1000);
 
             // Click Login
@@ -75,13 +71,11 @@ public class TC06 {
                 driver.switchTo().window(handle);
             }
 
-            // debug purpose only
             Thread.sleep(2000);
 
             // Click on MY WISHLIST link
             driver.findElement(By.linkText("MY WISHLIST")).click();
 
-            // debug purpose only
             Thread.sleep(2000);
 
             // In next page, Click ADD TO CART link
@@ -103,7 +97,7 @@ public class TC06 {
             // debug purpose only
             Thread.sleep(1000);
 
-            cartPage.zipEmail(zip);
+            cartPage.zipEmail(Zip);
 
             // debug purpose only
             Thread.sleep(1000);
@@ -160,66 +154,54 @@ public class TC06 {
                 driver.switchTo().window(handle);
             }
 
-            // debug purpose only
             Thread.sleep(2000);
 
             // Enter Billing Information, and click Continue
             CheckOutPage checkoutPage = new CheckOutPage(driver);
-            checkoutPage.selectAddressBilling(address);
+            checkoutPage.selectAddressBilling(Address);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterFirstNameBilling(firstName);
+            checkoutPage.enterFirstNameBilling(firstname);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterLastNameBilling(lastName);
+            checkoutPage.enterLastNameBilling(lastname);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterCompanyBilling(company);
+            checkoutPage.enterCompanyBilling(Company);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterAddress1Billing(address1);
+            checkoutPage.enterAddress1Billing(Address1);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterCityBilling(city);
+            checkoutPage.enterCityBilling(City);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.selectStateBilling(state);
+            checkoutPage.selectStateBilling(State);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterZipBilling(zip);
+            checkoutPage.enterZipBilling(Zip);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.selectCountryBilling(country);
+            checkoutPage.selectCountryBilling(Country);
 
-            // debug purpose only
             Thread.sleep(1000);
 
             checkoutPage.enterTelephoneBilling(telephone);
 
-            // debug purpose only
             Thread.sleep(1000);
 
             // driver.findElement(By.cssSelector("button[onclick='billing.save()']")).click();
 
             checkoutPage.clickShipToDifferentAddress();
 
-            // debug purpose only
             Thread.sleep(1000);
 
             checkoutPage.clickContinueBillingButton();
@@ -229,58 +211,47 @@ public class TC06 {
                 driver.switchTo().window(handle);
             }
 
-            // debug purpose only
             Thread.sleep(2000);
 
             // Enter Shipping Information, and click Continue
-            checkoutPage.selectAddressShipping(address);
+            checkoutPage.selectAddressShipping(Address);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterFirstNameShipping(firstName);
+            checkoutPage.enterFirstNameShipping(firstname);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterLastNameShipping(lastName);
+            checkoutPage.enterLastNameShipping(lastname);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterCompanyShipping(company);
+            checkoutPage.enterCompanyShipping(Company);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterAddress1Shipping(address1);
+            checkoutPage.enterAddress1Shipping(Address1);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterCityShipping(city);
+            checkoutPage.enterCityShipping(City);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.selectStateShipping(state);
+            checkoutPage.selectStateShipping(State);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.enterZipShipping(zip);
+            checkoutPage.enterZipShipping(Zip);
 
-            // debug purpose only
             Thread.sleep(1000);
 
-            checkoutPage.selectCountryShipping(country);
+            checkoutPage.selectCountryShipping(Country);
 
-            // debug purpose only
             Thread.sleep(1000);
 
             checkoutPage.enterTelephoneShipping(telephone);
 
-            // debug purpose only
             Thread.sleep(1000);
 
             checkoutPage.clickContinueShippingButton();
@@ -290,7 +261,6 @@ public class TC06 {
                 driver.switchTo().window(handle);
             }
 
-            // debug purpose only
             Thread.sleep(2000);
 
             // In Shipping Method, Click Continue
@@ -301,19 +271,16 @@ public class TC06 {
                 driver.switchTo().window(handle);
             }
 
-            // debug purpose only
             Thread.sleep(2000);
 
             // In Payment Information select 'Check/Money Order' radio button. Click
             // Continue
             driver.findElement(By.xpath("//label[normalize-space()='Check / Money order']")).click();
 
-            // debug purpose only
             Thread.sleep(1000);
 
             checkoutPage.clickContinuePaymentButton();
 
-            // debug purpose only
             Thread.sleep(2000);
 
             // Click 'PLACE ORDER' button
@@ -340,7 +307,6 @@ public class TC06 {
             png = ("D:\\FPT\\Chuyên ngành 5\\SWT301\\SeleniumWebdriver\\SeleniumWebdriver\\" + "TC06" + "_3.png");
             FileUtils.copyFile(scrFile, new File(png));
 
-            // debug purpose only
             Thread.sleep(2000);
 
         } catch (Exception e) {

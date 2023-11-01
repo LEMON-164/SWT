@@ -19,10 +19,10 @@ import driver.driverFactory;
 public class TC05 {
     @Test
     public void tc05() {
-        String firstname = "LEM";
+        String firstname = "LEMUN";
         String middlename = "...";
         String lastname = "...";
-        String email_address = "minhlev1642003@gmail.com";
+        String email_address = "minhlevuu1642003@gmail.com";
         String password = "Lemon@1604";
         String confirmation = "Lemon@1604";
 
@@ -96,7 +96,7 @@ public class TC05 {
 
             WebElement typeMess = driver.findElement(By.id("message"));
             typeMess.clear();
-            typeMess.sendKeys("hihihi");
+            typeMess.sendKeys("hi");
 
             // click SHARE WISHLIST
             driver.findElement(By.xpath("//button[@title='Share Wishlist']")).click();
